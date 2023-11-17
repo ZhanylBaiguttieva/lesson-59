@@ -3,19 +3,21 @@ import {useState} from 'react';
 interface JokeType {
   value: string;
 }
+
 const url = 'https://api.chucknorris.io/jokes/random';
 const Joke = () => {
   const [jokes, setJokes] = useState<JokeType>();
 
-    const fetchData = async () => {
-      const response = await fetch(url);
-      if (response.ok) {
-        const jokes = await response.json();
-        const newValue = jokes.value;
-        setJokes( {value: newValue});
-        console.log(newValue);
-      }
-    };
+  const fetchData = async () => {
+    const response = await fetch(url);
+    if (response.ok) {
+      const jokes = await response.json();
+      const newValue = jokes.value;
+      setJokes( {value: newValue});
+      console.log(newValue);
+    }
+  };
+
   const  jokeList: React.ReactNode = null;
   if(jokes) {
     return (
@@ -25,6 +27,7 @@ const Joke = () => {
       </div>
     );
   }
+
   return (
     <div>
       {jokeList}

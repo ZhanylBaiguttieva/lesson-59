@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Film from './components/Film';
 import AddFilmForm from './components/AddFilmForm';
-import './App.css';
 import Joke from './components/Joke';
+import './App.css';
 
 interface ExampleOfFilm {
   info: string;
@@ -19,7 +19,8 @@ function App() {
 
   useEffect(() => {
     console.log('Films changed');
-  }), [films];
+  }, [films]);
+
   const changeFilm = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentFilm(event.target.value);
   };
@@ -51,7 +52,6 @@ function App() {
         info: currentFilm,
       }];
     });
-
   };
 
   return (

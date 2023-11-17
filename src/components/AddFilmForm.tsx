@@ -12,11 +12,12 @@ const AddFilmForm: React.FC<Props> = ({
   return (
     <div className='row m-1 g-3'>
       <div className='col-auto'>
-        <input type='text'
+        <input
+               id="input-form"
+               type='text'
                placeholder="Add new film"
                className="form-control"
                onChange={onFilmChange}
-
         />
       </div>
       <div className='col-auto'>
