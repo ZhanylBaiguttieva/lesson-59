@@ -16,6 +16,7 @@ const AddFilmForm: React.FC<Props> = ({
                placeholder="Add new film"
                className="form-control"
                onChange={onFilmChange}
+
         />
       </div>
       <div className='col-auto'>

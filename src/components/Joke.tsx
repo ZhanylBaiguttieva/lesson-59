@@ -16,12 +16,18 @@ const Joke = () => {
         console.log(newValue);
       }
     };
-
-  return (
-    <div>
+  const  jokeList: React.ReactNode = null;
+  if(jokes) {
+    return (
       <div className="bg-warning p-3 m-2 rounded">
         <p>{jokes?.value}</p>
+      <button className="btn btn-success mb-3" onClick={fetchData}>Get joke</button>
       </div>
+    );
+  }
+  return (
+    <div>
+      {jokeList}
       <button className="btn btn-success mb-3" onClick={fetchData}>Get joke</button>
     </div>
   );
